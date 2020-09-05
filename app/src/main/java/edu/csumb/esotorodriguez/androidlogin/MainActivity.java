@@ -55,11 +55,13 @@ public class MainActivity extends AppCompatActivity {
                     passPassed = checkPassword(secret);
                     if (!passPassed) {
                         pass.setError("Password");
+                        Toast.makeText(MainActivity.this, "Password is Incorrect", Toast.LENGTH_LONG).show();
                     }
                 }
 
                 if (userPassed && passPassed) {
-                    retrieveIntent(getApplicationContext());
+                    Intent intent = Welcome.getIntent(getApplicationContext(), 42);
+                    startActivity(intent);
                 }
             }
         });
@@ -77,9 +79,5 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
         return false;
-    }
-
-    public static void retrieveIntent(Context context) {
-        Intent intent = Welcome.getIntent(context, 42);
     }
 }

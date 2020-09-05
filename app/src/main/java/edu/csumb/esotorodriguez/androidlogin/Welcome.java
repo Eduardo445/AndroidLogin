@@ -23,7 +23,7 @@ public class Welcome extends AppCompatActivity {
     }
 
     public static Intent getIntent(Context context, int value) {
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, Welcome.class);
         intent.putExtra("INTENT_EXTRA_VALUE", value);
         return intent;
     }

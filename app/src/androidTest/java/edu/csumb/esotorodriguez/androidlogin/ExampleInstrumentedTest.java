@@ -1,6 +1,7 @@
 package edu.csumb.esotorodriguez.androidlogin;
 
 import android.content.Context;
+import android.content.Intent;
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -18,9 +19,9 @@ import static org.junit.Assert.*;
 @RunWith(AndroidJUnit4.class)
 public class ExampleInstrumentedTest {
     @Test
-    public void useAppContext() {
-        // Context of the app under test.
+    public void intentTest() {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("edu.csumb.esotorodriguez.androidlogin", appContext.getPackageName());
+        Intent intent = Welcome.getIntent(appContext, 42);
+        assertEquals("edu.csumb.esotorodriguez.androidlogin.Welcome", intent.resolveActivity(appContext.getPackageManager()).getClassName());
     }
 }
