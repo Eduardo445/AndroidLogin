@@ -16,6 +16,7 @@ public class ExampleUnitTest {
         MainActivity.people.put("RockMan", "MMX");
         MainActivity.people.put("SMW1990", "GoodGame");
         MainActivity.people.put("AdvanceWars", "12+Years");
+        MainActivity.people.put("Hello1232", "11-Years");
     }
 
     @Test
